@@ -4,7 +4,7 @@ External calls to malicious contracts that have similar looking ABI
 
 /**
  * Attack breakdown
- * 
+  
  1. the fact about Malicious.sol is that it will generate the same ABI as Helper.sol eventhough it has different code within it.
  
  2. This is because ABI only contains function definitions for public variables, functions and events. So Malicious.sol can be typecasted as Helper.sol.
