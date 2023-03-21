@@ -20,15 +20,19 @@ External calls to malicious contracts that have similar looking ABI
  6. when the tries to call isUserEligible with his address ---
     this function will always return false because it calls Malicious.sol's isUserEligible function which always returns false 
     except when its the owner itself, which was not supposed to happen.
-PREVENTION 
+
+
+-PREVENTION 
+
 1. Make the address of the external contract public and also get your external contract verified so that all users can view the code
 2. instead of typecasting an address into a contract inside the constructor -- Create a new contract
    So instead of doing Helper(_helper) where you are typecasting _helper address into a contract--- which may or may not be the Helper contract, 
     create an explicit new helper contract instance using new Helper().
+    
     contract Good {
     Helper public helper;
     constructor() {
         helper = new Helper();
 }
 
-*/
+
